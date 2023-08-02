@@ -1,0 +1,27 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Modal Title</h5>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="codeFournisseur">codeFournisseur</label>
+          <input type="text" class="form-control" id="codeFournisseur" [(ngModel)]="codeFournisseur" name="codeFournisseur" />
+        </div>
+        <div class="form-group">
+          <label for="codeRetenuSource">codeRetenuSource</label>
+          <input type="text" class="form-control" id="codeRetenuSource" [(ngModel)]="codeRetenuSource" name="codeRetenuSource" />
+        </div>
+        <div class="form-group">
+          <label for="codeModeReglement">codeModeReglement</label>
+          <input type="text" class="form-control" id="codeModeReglement" [(ngModel)]="codeModeReglement" name="codeModeReglement" />
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" (click)="confirm()">Valider</button>
+      <button class="btn btn-danger" (click)="cancel()">Annuler</button>
+    </div>
+  </div>
+  

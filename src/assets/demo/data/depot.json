@@ -1,0 +1,37 @@
+{
+    "data": [
+    {
+      "CodeDepot": "D1",
+      "NomDepot": "Depot 1",
+      "CodeResponsable": "R1",
+      "Adresse": "Adresse 1",
+      "Tel1": "1111111111",
+      "Tel2": "2222222222",
+      "Actif": true,
+      "DateCreation": "2021-01-01",
+      "CreerPar": "Utilisateur 1"
+    },
+    {
+      "CodeDepot": "D2",
+      "NomDepot": "Depot 2",
+      "CodeResponsable": "R2",
+      "Adresse": "Adresse 2",
+      "Tel1": "3333333333",
+      "Tel2": "4444444444",
+      "Actif": true,
+      "DateCreation": "2021-02-01",
+      "CreerPar": "Utilisateur 2"
+    },
+    {
+      "CodeDepot": "D3",
+      "NomDepot": "Depot 3",
+      "CodeResponsable": "R3",
+      "Adresse": "Adresse 3",
+      "Tel1": "5555555555",
+      "Tel2": "6666666666",
+      "Actif": false,
+      "DateCreation": "2021-03-01",
+      "CreerPar": "Utilisateur 3"
+    }
+  ]
+}

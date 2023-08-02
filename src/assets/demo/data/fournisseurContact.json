@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "codeContactFournisseur": 1,
+            "codeFournisseur": "F001",
+            "codeFonctionContact": "FC001",
+            "nomPrenom": "John Doe",
+            "tel1": "1234567890",
+            "tel2": "",
+            "tel3": "",
+            "email1": "john.doe@example.com",
+            "email2": "",
+            "email3": "",
+            "noteInterne": "Note interne 1",
+            "creerPar": "Admin",
+            "dateCreation": "2022-01-01"
+        },
+        {
+            "codeContactFournisseur": 2,
+            "codeFournisseur": "F002",
+            "codeFonctionContact": "FC002",
+            "nomPrenom": "Jane Smith",
+            "tel1": "9876543210",
+            "tel2": "",
+            "tel3": "",
+            "email1": "jane.smith@example.com",
+            "email2": "",
+            "email3": "",
+            "noteInterne": "Note interne 2",
+            "creerPar": "Admin",
+            "dateCreation": "2022-02-01"
+        },
+        {
+            "codeContactFournisseur": 3,
+            "codeFournisseur": "F003",
+            "codeFonctionContact": "FC003",
+            "nomPrenom": "Robert Johnson",
+            "tel1": "5678901234",
+            "tel2": "",
+            "tel3": "",
+            "email1": "robert.johnson@example.com",
+            "email2": "",
+            "email3": "",
+            "noteInterne": "Note interne 3",
+            "creerPar": "Admin",
+            "dateCreation": "2022-03-01"
+        },
+        {
+            "codeContactFournisseur": 4,
+            "codeFournisseur": "F004",
+            "codeFonctionContact": "FC004",
+            "nomPrenom": "Michael Brown",
+            "tel1": "4321098765",
+            "tel2": "",
+            "tel3": "",
+            "email1": "michael.brown@example.com",
+            "email2": "",
+            "email3": "",
+            "noteInterne": "Note interne 4",
+            "creerPar": "Admin",
+            "dateCreation": "2022-04-01"
+        }
+    ]
+}

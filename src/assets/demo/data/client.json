@@ -1,0 +1,60 @@
+{
+    "data": [
+      {
+        "codeClient": "C001",
+        "codeFamilleClient": "FAM001",
+        "codeSecteurActivite": "SECT001"
+      },
+      {
+        "codeClient": "C002",
+        "codeFamilleClient": "FAM002",
+        "codeSecteurActivite": "SECT002"
+      },
+      {
+        "codeClient": "C003",
+        "codeFamilleClient": "FAM003",
+        "codeSecteurActivite": "SECT003"
+      },
+      {
+        "codeClient": "C004",
+        "codeFamilleClient": "FAM004",
+        "codeSecteurActivite": "SECT004"
+      },
+      {
+        "codeClient": "C005",
+        "codeFamilleClient": "FAM005",
+        "codeSecteurActivite": "SECT005"
+      },
+      {
+        "codeClient": "C006",
+        "codeFamilleClient": "FAM006",
+        "codeSecteurActivite": "SECT006"
+      },
+      {
+        "codeClient": "C007",
+        "codeFamilleClient": "FAM007",
+        "codeSecteurActivite": "SECT007"
+      },
+      {
+        "codeClient": "C008",
+        "codeFamilleClient": "FAM008",
+        "codeSecteurActivite": "SECT008"
+      },
+      {
+        "codeClient": "C009",
+        "codeFamilleClient": "FAM009",
+        "codeSecteurActivite": "SECT009"
+      },
+      {
+        "codeClient": "C010",
+        "codeFamilleClient": "FAM010",
+        "codeSecteurActivite": "SECT010"
+      },
+      {
+        "codeClient": "C011",
+        "codeFamilleClient": "FAM011",
+        "codeSecteurActivite": "SECT011"
+      }
+    ]
+  }
+  

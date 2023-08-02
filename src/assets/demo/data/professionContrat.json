@@ -1,0 +1,24 @@
+{
+    "data":[
+        {
+          "codeProfession": "P1",
+          "profession": "Ingénieur"
+        },
+        {
+          "codeProfession": "P2",
+          "profession": "Enseignant"
+        },
+        {
+          "codeProfession": "P3",
+          "profession": "Médecin"
+        },
+        {
+          "codeProfession": "P4",
+          "profession": "Avocat"
+        },
+        {
+          "codeProfession": "P5",
+          "profession": "Artiste"
+        }
+      ]
+}

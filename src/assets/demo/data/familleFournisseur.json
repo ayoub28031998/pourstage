@@ -1,0 +1,25 @@
+
+{
+    "data":[
+    {
+        "codeFamille": "FAM001",
+        "libelle": "Fournisseur A"
+    },
+    {
+        "codeFamille": "FAM002",
+        "libelle": "Fournisseur B"
+    },
+    {
+        "codeFamille": "FAM003",
+        "libelle": "Fournisseur C"
+    },
+    {
+        "codeFamille": "FAM004",
+        "libelle": "Fournisseur D"
+    },
+    {
+        "codeFamille": "FAM005",
+        "libelle": "Fournisseur E"
+    }
+]
+}

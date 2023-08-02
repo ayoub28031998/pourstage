@@ -1,0 +1,55 @@
+{
+    "data": [
+      {
+        "codeSociete": "S1",
+        "fodec": 0.05,
+        "tpe": 0.01,
+        "tpe2": 0.02,
+        "droitConsommation": 0.03,
+        "timbreFiscale": 0.02,
+        "dateDerniereModification": "2023-06-30T08:00:00.000Z",
+        "derniereModificationPar": "Admin"
+      },
+      {
+        "codeSociete": "S2",
+        "fodec": 0.02,
+        "tpe": 0.01,
+        "tpe2": 0.02,
+        "droitConsommation": 0.04,
+        "timbreFiscale": 0.01,
+        "dateDerniereModification": "2023-06-30T08:00:00.000Z",
+        "derniereModificationPar": "Admin"
+      },
+      {
+        "codeSociete": "S3",
+        "fodec": 0.03,
+        "tpe": 0.02,
+        "tpe2": 0.01,
+        "droitConsommation": 0.05,
+        "timbreFiscale": 0.03,
+        "dateDerniereModification": "2023-06-30T08:00:00.000Z",
+        "derniereModificationPar": "Admin"
+      },
+      {
+        "codeSociete": "S4",
+        "fodec": 0.01,
+        "tpe": 0.01,
+        "tpe2": 0.02,
+        "droitConsommation": 0.03,
+        "timbreFiscale": 0.01,
+        "dateDerniereModification": "2023-06-30T08:00:00.000Z",
+        "derniereModificationPar": "Admin"
+      },
+      {
+        "codeSociete": "S5",
+        "fodec": 0.02,
+        "tpe": 0.02,
+        "tpe2": 0.03,
+        "droitConsommation": 0.04,
+        "timbreFiscale": 0.02,
+        "dateDerniereModification": "2023-06-30T08:00:00.000Z",
+        "derniereModificationPar": "Admin"
+      }
+    ]
+  }
+  

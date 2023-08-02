@@ -1,0 +1,116 @@
+{
+    "data": [
+      {
+        "codeFournisseur": "F1",
+        "raisonSociale": "Fournisseur 1",
+        "matriculeFiscale": "MF1",
+        "tel1": "123456789",
+        "adresse1": "Adresse 1",
+        "codeVille": "V1",
+        "codePays": "P1"
+      },
+      {
+        "codeFournisseur": "F2",
+        "raisonSociale": "Fournisseur 2",
+        "matriculeFiscale": "MF2",
+        "tel1": "987654321",
+        "adresse1": "Adresse 2",
+        "codeVille": "V2",
+        "codePays": "P2"
+      },
+      {
+        "codeFournisseur": "F3",
+        "raisonSociale": "Fournisseur 3",
+        "matriculeFiscale": "MF3",
+        "tel1": "456123789",
+        "adresse1": "Adresse 3",
+        "codeVille": "V3",
+        "codePays": "P3"
+      },
+      {
+        "codeFournisseur": "F4",
+        "raisonSociale": "Fournisseur 4",
+        "matriculeFiscale": "MF4",
+        "tel1": "789123456",
+        "adresse1": "Adresse 4",
+        "codeVille": "V4",
+        "codePays": "P4"
+      },
+      {
+        "codeFournisseur": "F5",
+        "raisonSociale": "Fournisseur 5",
+        "matriculeFiscale": "MF5",
+        "tel1": "123456789",
+        "adresse1": "Adresse 5",
+        "codeVille": "V5",
+        "codePays": "P5"
+      },
+      {
+        "codeFournisseur": "F6",
+        "raisonSociale": "Fournisseur 6",
+        "matriculeFiscale": "MF6",
+        "tel1": "987654321",
+        "adresse1": "Adresse 6",
+        "codeVille": "V6",
+        "codePays": "P6"
+      },
+      {
+        "codeFournisseur": "F7",
+        "raisonSociale": "Fournisseur 7",
+        "matriculeFiscale": "MF7",
+        "tel1": "456123789",
+        "adresse1": "Adresse 7",
+        "codeVille": "V7",
+        "codePays": "P7"
+      },
+      {
+        "codeFournisseur": "F8",
+        "raisonSociale": "Fournisseur 8",
+        "matriculeFiscale": "MF8",
+        "tel1": "789123456",
+        "adresse1": "Adresse 8",
+        "codeVille": "V8",
+        "codePays": "P8"
+      },
+      {
+        "codeFournisseur": "F9",
+        "raisonSociale": "Fournisseur 9",
+        "matriculeFiscale": "MF9",
+        "tel1": "123456789",
+        "adresse1": "Adresse 9",
+        "codeVille": "V9",
+        "codePays": "P9",
+        "solde": "0"
+      },
+      {
+        "codeFournisseur": "F10",
+        "raisonSociale": "Fournisseur 10",
+        "matriculeFiscale": "MF10",
+        "tel1": "987654321",
+        "adresse1": "Adresse 10",
+        "codeVille": "V10",
+        "codePays": "P10",
+        "solde": "0"
+      },
+      {
+        "codeFournisseur": "F11",
+        "raisonSociale": "Fournisseur 11",
+        "matriculeFiscale": "MF11",
+        "tel1": "456123789",
+        "adresse1": "Adresse 11",
+        "codeVille": "V11",
+        "codePays": "P11",
+        "solde": "0"
+      },
+      {
+        "codeFournisseur": "F12",
+        "raisonSociale": "Fournisseur 12",
+        "matriculeFiscale": "MF12",
+        "tel1": "789123456",
+        "adresse1": "Adresse 12",
+        "codeVille": "V12",
+        "codePays": "P12",
+        "solde": "0"
+      }
+    ]
+  }

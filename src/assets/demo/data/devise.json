@@ -1,0 +1,29 @@
+{
+    "data":[
+        {
+          "code": "EUR",
+          "devise": "Euro",
+          "cout": "1.00"
+        },
+        {
+          "code": "USD",
+          "devise": "US Dollar",
+          "cout": "1.18"
+        },
+        {
+          "code": "JPY",
+          "devise": "Japanese Yen",
+          "cout": "0.0091"
+        },
+        {
+          "code": "GBP",
+          "devise": "British Pound Sterling",
+          "cout": "1.39"
+        },
+        {
+          "code": "CAD",
+          "devise": "Canadian Dollar",
+          "cout": "0.94"
+        }
+      ]
+}

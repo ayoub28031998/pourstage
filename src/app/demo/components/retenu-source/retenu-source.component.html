@@ -1,0 +1,109 @@
+<div class="grid">
+    <div class="col-12">
+      <div class="card">
+        <h5>Filter Menu</h5>
+        <p-table #dt1 [value]="retenus" dataKey="CodeDepot" [rows]="10" [loading]="loading" [rowHover]="true"
+          styleClass="p-datatable-gridlines" [paginator]="true" [globalFilterFields]="['codeRetenu','libelleRetenu','tauxRetenu','retenuTTC','retenuTVA']"
+          responsiveLayout="scroll">
+          <ng-template pTemplate="caption">
+            <div class="flex justify-content-between flex-column sm:flex-row">
+              <button pButton label="Clear" class="p-button-outlined mb-2" icon="pi pi-filter-slash"
+                (click)="clear(dt1)"></button>
+              <span class="p-input-icon-left mb-2">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" #filter (input)="onGlobalFilter(dt1, $event)" placeholder="Search Keyword"
+                  class="w-full" />
+              </span>
+            </div>
+          </ng-template>
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    codeRetenu
+                  <p-columnFilter type="text" field="codeRetenu" display="menu" placeholder="Search by codeRetenu"></p-columnFilter>
+                </div>
+              </th>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    libelleRetenu
+                  <p-columnFilter type="text" field="libelleRetenu" display="menu"
+                    placeholder="Search by libelleRetenu"></p-columnFilter>
+                </div>
+              </th>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    tauxRetenu
+                  <p-columnFilter type="text" field="tauxRetenu" display="menu" placeholder="Search by tauxRetenu"></p-columnFilter>
+                </div>
+              </th>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    retenuTTC
+                  <p-columnFilter type="text" field="retenuTTC" display="menu" placeholder="Search by retenuTTC"></p-columnFilter>
+                </div>
+              </th>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    retenuTVA
+                  <p-columnFilter type="text" field="retenuTVA" display="menu" placeholder="Search by retenuTVA"></p-columnFilter>
+                </div>
+              </th>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                    actif
+                  <p-columnFilter type="text" field="actif" display="menu" placeholder="Search by actif"></p-columnFilter>
+                </div>
+              </th>
+              
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                  DateCreation
+                  <p-columnFilter type="text" field="DateCreation" display="menu"
+                    placeholder="Search by DateCreation"></p-columnFilter>
+                </div>
+              </th>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                  CreerPar
+                  <p-columnFilter type="text" field="CreerPar" display="menu" placeholder="Search by CreerPar"></p-columnFilter>
+                </div>
+              </th>
+              <th style="min-width: 10rem">
+                <div class="flex justify-content-between align-items-center">
+                  Action
+                </div>
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-retenu>
+            <tr>
+              <td>{{ retenu.codeRetenu }}</td>
+              <td>{{ retenu.libelleRetenu }}</td>
+              <td>{{ retenu.tauxRetenu }}</td>
+              <td>{{ retenu.retenuTTC }}</td>
+              <td>{{ retenu.retenuTVA }}</td>
+              <td>{{ retenu.actif }}</td>
+              <td>{{ retenu.dateCreation }}</td>
+              <td>{{ retenu.creerPar }}</td>
+              <td>
+                <button pButton pRipple icon="pi pi-cog" class="p-button-rounded p-button-info" (click)="openModal(retenu)"></button>&nbsp;
+                <button pButton pRipple icon="pi pi-times" class="p-button-rounded p-button-danger" (click)="deleteRetenu(retenu)"></button>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="10">No Retenu found.</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="loadingbody">
+            <tr>
+              <td colspan="10">Loading retenu data. Please wait.</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,23 @@
+{
+    "data": [
+    {
+      "codeMarqueArticle": "ABC123",
+      "libelleMarqueArticle": "Marque 1",
+      "dateCreation": "2022-01-01T00:00:00Z",
+      "creerPar": "Utilisateur1"
+    },
+    {
+      "codeMarqueArticle": "DEF456",
+      "libelleMarqueArticle": "Marque 2",
+      "dateCreation": "2022-02-15T09:30:00Z",
+      "creerPar": "Utilisateur2"
+    },
+    {
+      "codeMarqueArticle": "GHI789",
+      "libelleMarqueArticle": "Marque 3",
+      "dateCreation": "2022-03-30T18:45:00Z",
+      "creerPar": "Utilisateur3"
+    }
+  ]
+}
+  

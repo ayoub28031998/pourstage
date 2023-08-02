@@ -1,0 +1,76 @@
+{
+    "data": [
+        {
+            "codeTypeArticle": "001",
+            "libelleTypeArticle": "Vêtements",
+            "dateCreation": "2022-01-01",
+            "creerPar": "John Doe"
+        },
+        {
+            "codeTypeArticle": "002",
+            "libelleTypeArticle": "Électronique",
+            "dateCreation": "2022-02-01",
+            "creerPar": "Jane Smith"
+        },
+        {
+            "codeTypeArticle": "003",
+            "libelleTypeArticle": "Alimentation",
+            "dateCreation": "2022-03-01",
+            "creerPar": "Robert Johnson"
+        },
+        {
+            "codeTypeArticle": "001",
+            "libelleTypeArticle": "Vêtements",
+            "dateCreation": "2022-01-01",
+            "creerPar": "John Doe"
+        },
+        {
+            "codeTypeArticle": "002",
+            "libelleTypeArticle": "Électronique",
+            "dateCreation": "2022-02-01",
+            "creerPar": "Jane Smith"
+        },
+        {
+            "codeTypeArticle": "003",
+            "libelleTypeArticle": "Alimentation",
+            "dateCreation": "2022-03-01",
+            "creerPar": "Robert Johnson"
+        },
+        {
+            "codeTypeArticle": "001",
+            "libelleTypeArticle": "Vêtements",
+            "dateCreation": "2022-01-01",
+            "creerPar": "John Doe"
+        },
+        {
+            "codeTypeArticle": "002",
+            "libelleTypeArticle": "Électronique",
+            "dateCreation": "2022-02-01",
+            "creerPar": "Jane Smith"
+        },
+        {
+            "codeTypeArticle": "003",
+            "libelleTypeArticle": "Alimentation",
+            "dateCreation": "2022-03-01",
+            "creerPar": "Robert Johnson"
+        },
+        {
+            "codeTypeArticle": "001",
+            "libelleTypeArticle": "Vêtements",
+            "dateCreation": "2022-01-01",
+            "creerPar": "John Doe"
+        },
+        {
+            "codeTypeArticle": "002",
+            "libelleTypeArticle": "Électronique",
+            "dateCreation": "2022-02-01",
+            "creerPar": "Jane Smith"
+        },
+        {
+            "codeTypeArticle": "003",
+            "libelleTypeArticle": "Alimentation",
+            "dateCreation": "2022-03-01",
+            "creerPar": "Robert Johnson"
+        }
+    ]
+}

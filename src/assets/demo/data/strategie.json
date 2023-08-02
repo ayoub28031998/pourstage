@@ -1,0 +1,25 @@
+{
+	"data": [
+    {
+      "codeStrategieVente": "ABC123",
+      "libelleStrategieVente": "Stratégie 1",
+      "prixFixe": true,
+      "dateCreation": "2022-01-01T00:00:00Z",
+      "creerPar": "Utilisateur1"
+    },
+    {
+      "codeStrategieVente": "DEF456",
+      "libelleStrategieVente": "Stratégie 2",
+      "prixFixe": false,
+      "dateCreation": "2022-02-15T09:30:00Z",
+      "creerPar": "Utilisateur2"
+    },
+    {
+      "codeStrategieVente": "GHI789",
+      "libelleStrategieVente": "Stratégie 3",
+      "prixFixe": true,
+      "dateCreation": "2022-03-30T18:45:00Z",
+      "creerPar": "Utilisateur3"
+    }
+  ]
+} 

@@ -1,0 +1,25 @@
+{
+    "data": [
+      {
+        "codeTypeResponsable": "1",
+        "libelleTypeResponsable": "Responsable Principal"
+      },
+      {
+        "codeTypeResponsable": "2",
+        "libelleTypeResponsable": "Responsable Secondaire"
+      },
+      {
+        "codeTypeResponsable": "3",
+        "libelleTypeResponsable": "Superviseur"
+      },
+      {
+        "codeTypeResponsable": "4",
+        "libelleTypeResponsable": "Gestionnaire de Projet"
+      },
+      {
+        "codeTypeResponsable": "5",
+        "libelleTypeResponsable": "Administrateur"
+      }
+    ]
+  }
+  

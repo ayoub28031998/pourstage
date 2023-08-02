@@ -1,0 +1,103 @@
+{
+    "data": [
+        {
+          "NumeroInventaire": "INV001",
+          "DateInventaire": "2022-01-01T00:00:00Z",
+          "CodeDepot": "DEP001",
+          "CodeTypeInventaire": "TYPE001",
+          "Commercial": true,
+          "Economat": false,
+          "Immobilisation": false
+        },
+        {
+          "NumeroInventaire": "INV002",
+          "DateInventaire": "2022-02-01T00:00:00Z",
+          "CodeDepot": "DEP002",
+          "CodeTypeInventaire": "TYPE002",
+          "Commercial": false,
+          "Economat": true,
+          "Immobilisation": false
+        },
+        {
+          "NumeroInventaire": "INV003",
+          "DateInventaire": "2022-03-01T00:00:00Z",
+          "CodeDepot": "DEP003",
+          "CodeTypeInventaire": "TYPE003",
+          "Commercial": false,
+          "Economat": false,
+          "Immobilisation": true
+        },
+        {
+          "NumeroInventaire": "INV004",
+          "DateInventaire": "2022-04-01T00:00:00Z",
+          "CodeDepot": "DEP004",
+          "CodeTypeInventaire": "TYPE004",
+          "Commercial": true,
+          "Economat": true,
+          "Immobilisation": false
+        },
+        {
+          "NumeroInventaire": "INV005",
+          "DateInventaire": "2022-05-01T00:00:00Z",
+          "CodeDepot": "DEP005",
+          "CodeTypeInventaire": "TYPE005",
+          "Commercial": true,
+          "Economat": false,
+          "Immobilisation": true
+        },
+        {
+          "NumeroInventaire": "INV006",
+          "DateInventaire": "2022-06-01T00:00:00Z",
+          "CodeDepot": "DEP006",
+          "CodeTypeInventaire": "TYPE006",
+          "Commercial": false,
+          "Economat": true,
+          "Immobilisation": true
+        },
+        {
+          "NumeroInventaire": "INV007",
+          "DateInventaire": "2022-07-01T00:00:00Z",
+          "CodeDepot": "DEP007",
+          "CodeTypeInventaire": "TYPE007",
+          "Commercial": true,
+          "Economat": true,
+          "Immobilisation": true
+        },
+        {
+          "NumeroInventaire": "INV008",
+          "DateInventaire": "2022-08-01T00:00:00Z",
+          "CodeDepot": "DEP008",
+          "CodeTypeInventaire": "TYPE008",
+          "Commercial": false,
+          "Economat": false,
+          "Immobilisation": false
+        },
+        {
+          "NumeroInventaire": "INV009",
+          "DateInventaire": "2022-09-01T00:00:00Z",
+          "CodeDepot": "DEP009",
+          "CodeTypeInventaire": "TYPE009",
+          "Commercial": true,
+          "Economat": false,
+          "Immobilisation": true
+        },
+        {
+          "NumeroInventaire": "INV010",
+          "DateInventaire": "2022-10-01T00:00:00Z",
+          "CodeDepot": "DEP010",
+          "CodeTypeInventaire": "TYPE010",
+          "Commercial": false,
+          "Economat": true,
+          "Immobilisation": true
+        },
+        {
+          "NumeroInventaire": "INV011",
+          "DateInventaire": "2022-11-01T00:00:00Z",
+          "CodeDepot": "DEP011",
+          "CodeTypeInventaire": "TYPE011",
+          "Commercial": true,
+          "Economat": true,
+          "Immobilisation": true
+        }
+      ]
+}

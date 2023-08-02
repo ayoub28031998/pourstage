@@ -1,0 +1,125 @@
+{
+  "data": [
+    {
+      "codeChauffeur": "CH001",
+      "codeResponsable": "CR001",
+      "nomPrenom": "John Doe",
+      "cin": "1234567890",
+      "tel1": "123456789",
+      "tel2": "987654321",
+      "actif": true,
+      "creerPar": "Admin",
+      "dateCreation": "2022-01-01T00:00:00"
+    },
+    {
+      "codeChauffeur": "CH002",
+      "codeResponsable": "CR002",
+      "nomPrenom": "Jane Smith",
+      "cin": "0987654321",
+      "tel1": "987654321",
+      "tel2": "123456789",
+      "actif": false,
+      "creerPar": "Manager",
+      "dateCreation": "2022-02-15T09:30:00"
+    },
+    {
+      "codeChauffeur": "CH003",
+      "codeResponsable": "CR003",
+      "nomPrenom": "Michael Johnson",
+      "cin": "5432167890",
+      "tel1": "456789123",
+      "tel2": "321987654",
+      "actif": true,
+      "creerPar": "Supervisor",
+      "dateCreation": "2022-03-20T18:45:00"
+    },
+    {
+      "codeChauffeur": "CH004",
+      "codeResponsable": "CR004",
+      "nomPrenom": "Sarah Williams",
+      "cin": "9876543210",
+      "tel1": "789456123",
+      "tel2": "654123789",
+      "actif": true,
+      "creerPar": "Admin",
+      "dateCreation": "2022-04-10T12:00:00"
+    },
+    {
+      "codeChauffeur": "CH005",
+      "codeResponsable": "CR005",
+      "nomPrenom": "David Johnson",
+      "cin": "0123456789",
+      "tel1": "321654987",
+      "tel2": "987321654",
+      "actif": false,
+      "creerPar": "Manager",
+      "dateCreation": "2022-05-25T16:30:00"
+    },
+    {
+      "codeChauffeur": "CH006",
+      "codeResponsable": "CR006",
+      "nomPrenom": "Emily Anderson",
+      "cin": "5678901234",
+      "tel1": "789123456",
+      "tel2": "456789123",
+      "actif": true,
+      "creerPar": "Supervisor",
+      "dateCreation": "2022-06-10T21:15:00"
+    },
+    {
+      "codeChauffeur": "CH007",
+      "codeResponsable": "CR007",
+      "nomPrenom": "Daniel Wilson",
+      "cin": "9876543210",
+      "tel1": "456123789",
+      "tel2": "123789456",
+      "actif": false,
+      "creerPar": "Admin",
+      "dateCreation": "2022-07-05T10:45:00"
+    },
+    {
+      "codeChauffeur": "CH008",
+      "codeResponsable": "CR008",
+      "nomPrenom": "Olivia Thompson",
+      "cin": "5432109876",
+      "tel1": "321789456",
+      "tel2": "789456123",
+      "actif": true,
+      "creerPar": "Manager",
+      "dateCreation": "2022-08-20T15:00:00"
+    },
+    {
+      "codeChauffeur": "CH009",
+      "codeResponsable": "CR009",
+      "nomPrenom": "William Davis",
+      "cin": "6789012345",
+      "tel1": "654987321",
+      "tel2": "321654987",
+      "actif": true,
+      "creerPar": "Supervisor",
+      "dateCreation": "2022-09-15T19:30:00"
+    },
+    {
+      "codeChauffeur": "CH010",
+      "codeResponsable": "CR010",
+      "nomPrenom": "Sophia Martinez",
+      "cin": "2345678901",
+      "tel1": "987321654",
+      "tel2": "654987321",
+      "actif": false,
+      "creerPar": "Admin",
+      "dateCreation": "2022-10-10T08:00:00"
+    },
+    {
+      "codeChauffeur": "CH011",
+      "codeResponsable": "CR011",
+      "nomPrenom": "James Brown",
+      "cin": "8901234567",
+      "tel1": "789456123",
+      "tel2": "456123789",
+      "actif": true,
+      "creerPar": "Manager",
+      "dateCreation": "2022-11-25T13:45:00"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "data":[
+        {
+          "code": "SR1",
+          "sousRegion": "Sous-région 1"
+        },
+        {
+          "code": "SR2",
+          "sousRegion": "Sous-région 2"
+        },
+        {
+          "code": "SR3",
+          "sousRegion": "Sous-région 3"
+        },
+        {
+          "code": "SR4",
+          "sousRegion": "Sous-région 4"
+        },
+        {
+          "code": "SR5",
+          "sousRegion": "Sous-région 5"
+        }
+      ]
+}

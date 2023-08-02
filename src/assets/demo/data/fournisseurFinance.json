@@ -1,0 +1,25 @@
+{
+    "data": [
+      {
+        "codeFournisseur": "EXAMPLE_CODE_1",
+        "dateDerniereModification": "11/12/2021"
+      },
+      {
+        "codeFournisseur": "EXAMPLE_CODE_2",
+        "dateDerniereModification": "11/12/2022"
+      },
+      {
+        "codeFournisseur": "EXAMPLE_CODE_3",
+        "dateDerniereModification": "12/12/2021"
+      },
+      {
+        "codeFournisseur": "EXAMPLE_CODE_4",
+        "dateDerniereModification": "12/12/2021"
+      },
+      {
+        "codeFournisseur": "EXAMPLE_CODE_5",
+        "dateDerniereModification": "12/12/2021"
+      }
+    ]
+  }
+  

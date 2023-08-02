@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+          "codeModeReglement": "MR001",
+          "libelleModeReglement": "Mode de paiement 1",
+          "actif": true,
+          "dateCreation": "2023-07-03T00:00:00Z",
+          "creerPar": "Utilisateur1"
+        },
+        {
+          "codeModeReglement": "MR002",
+          "libelleModeReglement": "Mode de paiement 2",
+          "actif": true,
+          "dateCreation": "2023-07-03T00:00:00Z",
+          "creerPar": "Utilisateur2"
+        },
+        {
+          "codeModeReglement": "MR003",
+          "libelleModeReglement": "Mode de paiement 3",
+          "actif": false,
+          "dateCreation": "2023-07-03T00:00:00Z",
+          "creerPar": "Utilisateur3"
+        }
+      ]
+      
+}

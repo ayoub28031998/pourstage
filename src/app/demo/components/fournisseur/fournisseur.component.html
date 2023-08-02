@@ -1,0 +1,1065 @@
+<div class="grid">
+	<div class="col-12">
+
+
+		<div class="card">
+			<p-toolbar styleClass="mb-2 gap-4">
+				<ng-template pTemplate="left">
+					<button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="fournisseurDialog=true"></button>
+					<button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedFournisseur()" [disabled]="!selectedFournisseur"></button>
+				</ng-template>
+			</p-toolbar>
+
+			<p-table #dt1 [columns]="selectedColumns" [value]="fournisseur" [tableStyle]="{'min-width': '50rem'}"    styleClass="p-datatable-gridlines p-datatable-sm"
+				[tableStyle]="{ 'min-width': '50rem' }"
+				[scrollable]="true"
+				scrollHeight="400px"
+				[rows]="10"
+				[virtualScroll]="true"
+			  [virtualScrollItemSize]="46"
+			  [resizableColumns]="true"
+			  selectionMode="single" [(selection)]="selectedFournisseur"
+			  (onRowSelect)="onRowSelect($event)"
+			  >
+			  <ng-template pTemplate="caption">
+
+				<div class="flex align-center justify-between">
+					<p-multiSelect
+                     [options]="cols"
+                     [(ngModel)]="selectedColumns"
+                     optionLabel="header"
+                     selectedItemsLabel="{0} columns selected"
+                     defaultLabel="Choose Columns"
+                     class="mx-auto multi-select custom-multi-select"
+                     display="chip"
+                     style="width: 70%;"
+                    ></p-multiSelect>
+
+
+				  <button pButton label="Clear" class="p-button-rounded p-button-text mr-2" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+
+				  <div class="search-input">
+					<input
+					  pInputText
+					  type="text"
+					  [(ngModel)]="searchKeyword"
+					  (input)="dt1.filterGlobal(searchKeyword, 'contains')"
+					  placeholder="Search Keyword"/>
+				  </div>
+				</div>
+			  </ng-template>
+
+				<ng-template pTemplate="header" let-columns>
+					<tr>
+						<th pResizableColumn>code</th>
+						<th pResizableColumn *ngFor="let col of columns" [pSortableColumn]="col.field">
+							{{col.header}}
+							<p-sortIcon [field]="col.field"></p-sortIcon>
+						<p-columnFilter type="text" [field]="col.field" display="menu" [placeholder]="'Search by ' + col.header" ngDefaultControl></p-columnFilter>
+
+						</th>
+						<!-- <th pResizableColumn>Actions</th> -->
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-fournisseur let-columns="columns">
+					<tr [pSelectableRow]="fournisseur">
+						<td>{{fournisseur.codeFournisseur}}</td>
+						<td *ngFor="let col of columns">
+							{{fournisseur[col.field]}}
+						</td>
+
+					</tr>
+				</ng-template>
+			</p-table>
+		</div>
+
+
+		<p-dialog [(visible)]="fournisseurDialog" [style]="{width: '1250px', height: '1250px'}" [maximizable]="true" header="Fournisseur/Ajouter" label="Show" [modal]="true" class="p-fluid">
+			
+			<div class="card p-fluid">
+                <p-divider >
+                    <div class="inline-flex align-items-center">
+                        <i class="pi pi-user mr-2"></i>
+                        <b>Information Générale</b>
+                    </div>
+                </p-divider>
+			<div class="grid">
+				<div class="col-12 md:col-9">
+                        <div class="p-fluid p-formgrid grid ">
+                            <div class="  col-12 md:col-3">
+                                <span class="p-float-label">
+                                    <input pInputText id="code" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact" >
+                                    <label for="code">Code</label>
+                                </span>
+                            </div>
+
+                            <div class="  col-12 md:col-6">
+                                <span class="p-float-label">
+                                    <input pInputText id="raisonSociale" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact" >
+                                    <label for="raisonSociale">Raison Sociale</label>
+                                </span>
+                            </div>
+                            <div class="col-12 md:col-3">
+                                <p-checkbox class="mr-1" name="group1" value=true [(ngModel)]="changement" id="changementRaisonSociale"></p-checkbox>
+                                <label class="mr-1" for="changementRaisonSociale">Fournisseur client</label>
+                            </div>
+                        </div>
+                        <div class="p-fluid p-formgrid grid fieled">
+                            <div class="col-12 md:col-2">
+
+                                    <p-checkbox  name="group1" value=true  id="changementRaisonSociale"></p-checkbox>
+                                    <span class="m-1"><label   for="changementRaisonSociale">Prospection</label></span>
+
+
+                            </div>
+
+                            <div class="  col-12 md:col-5">
+                                                                    <!-- app.component.html -->
+                                    <div class="p-inputgroup">
+                                        <span class="p-float-label">
+                                        <p-autoComplete
+                                            [(ngModel)]="selectedItem"
+                                            [suggestions]="filteredItems"
+                                            (completeMethod)="searchItems($event)"
+                                            field="name"
+                                            [dropdown]="true"
+                                        ></p-autoComplete>
+                                        <label for="famille">Famille</label>
+                                        </span>
+                                        <button pButton type="button" icon="pi pi-plus" (click)="showDetails()"></button>
+                                    </div>
+
+                                    <p-dialog [(visible)]="displayDialog" [modal]="true" [responsive]="true" [breakpoint]="1024">
+                                        <h3>{{ selectedItem?.name }}</h3>
+                                        <p>Liste des détails de l'élément sélectionné :</p>
+                                        <p-listbox [options]="filteredItems" [(ngModel)]="selectedItem" optionLabel="name"></p-listbox>
+                                    </p-dialog>
+
+                                    <!-- <span class="p-float-label">
+                                    <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                    <label for="famille">Famille</label>
+
+                                </span> -->
+                            </div>
+
+
+                            <div class="col-12 md:col-5">
+                                <span class="p-float-label">
+                                    <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                    <label for="famille">Forme Juridique</label>
+
+                                </span>
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="p-fluid p-formgrid grid fieled">
+                            <div class="col-12 md:col-3">
+                                    <p-checkbox  name="group1" value=true  id="changementRaisonSociale"></p-checkbox>
+                                    <span class="m-1"><label   for="changementRaisonSociale">Réception Document</label></span>
+                            </div>
+                            <div class="col-12 md:col-9">
+
+                                <div class="grid formgrid">
+
+                                    <p-multiSelect [options]="typesFournisseur" [(ngModel)]="SelectedTypes" placeholder="Sélectionner les types" optionLabel="name" class="multiselect-custom " display="chip" >
+                                        <ng-template let-types pTemplate="item">
+                                            <div class="flex align-items-center">
+                                                <span class="ml-2">{{types.name}}</span>
+                                            </div>
+                                        </ng-template>
+                                    </p-multiSelect>
+
+                                </div>
+
+
+
+
+
+
+
+
+                                <!-- <div class="grid formgrid">
+                                    <label class="col-12 md:col-2 align-items-center">Types:</label>
+
+
+
+                                    <div class="col-12 md:col-2">
+                                        <div class="field-checkbox">
+                                            <p-checkbox name="group1" value="New York" [(ngModel)]="valCheck" id="ny"></p-checkbox>
+                                            <label for="ny">Service</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 md:col-2">
+                                        <div class="field-checkbox">
+                                            <p-checkbox name="group1" value="San Francisco" [(ngModel)]="valCheck" id="sf"></p-checkbox>
+                                            <label for="sf">Economat</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 md:col-3">
+                                        <div class="field-checkbox">
+                                            <p-checkbox name="group1" value="Los Angeles" [(ngModel)]="valCheck" id="la"></p-checkbox>
+                                            <label for="la">Immobilisation</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 md:col-3">
+                                        <div class="field-checkbox">
+                                            <p-checkbox name="group1" value="Los Angeles" [(ngModel)]="valCheck" id="la"></p-checkbox>
+                                            <label for="la">Commercial</label>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+
+
+
+
+
+
+                        </div>
+                        <div class=" p-formgrid grid ">
+
+
+                            <div class="col-12 md:col-3">
+                                <span class="p-float-label">
+                                    <p-autoComplete id="langue"  [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                    <label for="langue">Langue</label>
+
+                                </span>
+
+                            </div>
+                            <div class="col-12 md:col-3">
+                                <span class="p-float-label">
+                                    <p-autoComplete  id="pays" [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                    <label for="pays">Pays</label>
+
+                                </span>
+
+
+                            </div>
+                            <div class="col-12 md:col-2">
+                                <div class="field-checkbox">
+                                    <p-checkbox name="group1" value="San Francisco" [(ngModel)]="etrange" id="etrange" value=true></p-checkbox>
+                                    <label for="etrange">Etrangé</label>
+                                </div>
+                            </div>
+                            <div class="field col-12 md:col-4">
+                                <span class="p-float-label">
+                                    <p-calendar inputId="calendar" ></p-calendar>
+                                    <label for="calendar">Date Patente</label>
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="p-fluid p-formgrid grid ">
+                            <div class="  col-12 md:col-3">
+                                <span class="p-float-label">
+                                    <input pInputText id="codeComptable" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact" >
+                                    <label for="codeComptable">Code Comptable</label>
+                                </span>
+                            </div>
+                            <div class="col-12 md:col-3">
+                                <span class="p-float-label">
+                                    <p-autoComplete  id="devise" [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                    <label for="devise">Devise</label>
+
+                                </span>
+
+
+                            </div>
+                            <div class="col-12 md:col-2">
+                                <div class="field-checkbox">
+                                    <p-checkbox name="group1" value="San Francisco" [(ngModel)]="etrange" id="etrange" value=true></p-checkbox>
+                                    <label for="etrange">Euro 1</label>
+                                </div>
+                            </div>
+                            <div class="  col-12 md:col-2">
+                                <span class="p-float-label">
+                                    <input pInputText id="effectif" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact" >
+                                    <label for="effectif">Effectif</label>
+                                </span>
+
+                            </div>
+                            <div class="  col-12 md:col-2">
+                                <span class="p-float-label">
+                                    <input pInputText id="rc" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact" >
+                                    <label for="rc">RC</label>
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="p-fluid p-formgrid grid ">
+                        <div class="col-12 md:col-4">
+                            <span class="p-float-label">
+                                <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                <label for="r.n">R.N</label>
+
+                            </span>
+
+                        </div>
+                        <div class="col-12 md:col-4">
+                            <span class="p-float-label">
+                                <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                <label for="famille">RAD</label>
+
+                            </span>
+
+                        </div>
+
+                        <div class="col-12 md:col-4">
+                            <span class="p-float-label">
+                                <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                <label for="famille">RD</label>
+
+                            </span>
+
+                        </div>
+                   		</div>
+					</div>
+
+					<div class="col-12 md:col-3 mt-4">
+
+						<p-divider >
+							<div class="inline-flex align-items-center">
+								<i class="pi pi-file mr-2"></i>
+								<b>Logo Fournisseur</b>
+							</div>
+						</p-divider>
+						<div class="card flex justify-content-center">
+							<p-toast></p-toast>
+							<p-fileUpload mode="basic" chooseLabel="Choose" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" (onUpload)="onUpload($event)" (onSelect)="onSelect($event)"></p-fileUpload>
+							<!-- Display the selected image -->
+							<div *ngIf="selectedImage">
+								<img [src]="selectedImage" alt="Selected Image" class="selected-image" />
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+
+
+            </div>
+
+
+
+			<p-tabView orientation="left">
+				<p-tabPanel header="Information fournisseur" class="line-height-3 m-0">
+				<p-panel header="Contact/Facturation" [toggleable]="true" class="line-height-3 ">
+					<div class="grid">
+						<div class="col-12 md:col-6" >
+                            <div class="card p-fluid">
+								<p-divider >
+									<div class="inline-flex align-items-center">
+										<i class="pi pi-user mr-2"></i>
+										<b>Contact</b>
+									</div>
+								</p-divider>
+
+                         <div class="p-formgrid grid">
+                              <div class="col-12 field">
+                                  <span class="p-float-label ">
+                                      <input pInputText id="contact" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                       <label For="contact">contact</label>
+                                  </span>
+                               </div>
+                         </div>
+
+                              <div class="p-formgrid grid">
+                                <div class="field col ">
+                                    <span class="p-float-label ">
+                                        <input pInputText id="tel" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.tel">
+                                        <label htmlFor="contact">tel</label>
+                                    </span>
+                                </div>
+                                <div class="field col">
+                                    <span class="p-float-label ">
+                                        <input pInputText id="mail" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.mail">
+                                        <label htmlFor="mail">mail</label>
+                                    </span>
+                                </div>
+                              </div>
+                              <div class="p-formgrid grid">
+                                <div class="field col">
+                                    <span class="p-float-label">
+                                        <input pInputText id="fax" type="text" style="height: 25px;" [(ngModel)]="InformationFournisseur.fax">
+                                        <label htmlFor="fax">fax</label>
+                                    </span>
+                                </div>
+                                <div class="field col">
+                                    <span class="p-float-label">
+                                        <input pInputText id="siteweb" type="text" style="height: 25px;" [(ngModel)]="InformationFournisseur.siteweb">
+                                        <label htmlFor="siteweb">site web</label>
+                                    </span>
+                                </div>
+                              </div>
+                              <div class="grid formgrid">
+                                <div class="fieled col">
+                                  <div class="field-checkbox">
+                                    <p-checkbox class="field" name="group1" value="New York" [(ngModel)]="valCheck" id="ny"></p-checkbox>
+                                    <label class="field" for="ny">fournisseur client</label>
+                                  </div>
+                                </div>
+                                  <div class="field col">
+                                    <span class="p-float-label fieled" style="height: 25px;">
+                                    <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                    <label htmlFor="client">choisir client</label>
+                                    </span>
+                                </div>
+
+                              </div>
+
+                            </div>
+                          </div>
+						<div class="col-12 md:col-6">
+
+							<div class="card p-fluid">
+                                <p-divider >
+									<div class="inline-flex align-items-center">
+										<i class="pi pi-file mr-2"></i>
+										<b>Facturation</b>
+									</div>
+								</p-divider>
+								<div class="p-formgrid grid">
+									<div class="col-12 field">
+									<span class="p-float-label ">
+										<textarea rows="2" cols="80"  pInputTextarea id="tel" type="text" [(ngModel)]="InformationFournisseur.adresse"></textarea>
+										<label htmlFor="adresse">adresse</label>
+									</span>
+								</div>
+								</div>
+								<div class="p-formgrid grid">
+								<div class="col-12 md:col-6">
+									<span class="p-float-label field">
+									<p-autoComplete [(ngModel)]="InformationFournisseur.ville" [suggestions]="filteredville" (completeMethod)="filterville($event)" field="designationville" [dropdown]="true"></p-autoComplete>
+									<label htmlFor="ville">ville</label>
+									</span>
+								</div>
+							</div>
+								<div class="p-formgrid grid">
+									<div class="field col">
+										<span class="p-float-label">
+											<p-autoComplete [(ngModel)]="InformationFournisseur.region" [suggestions]="filteredregion" (completeMethod)="filterregion($event)" field="designationregion" [dropdown]="true"></p-autoComplete>
+											<label htmlFor="ville">sous région</label>
+										</span>
+									</div>
+									<div class="field col">
+										<span class="p-float-label">
+										<input pInputText style="height: 25px;" id="codepostale" type="text" [(ngModel)]="InformationFournisseur.codepostal">
+										<label htmlFor="codepostale">code postal</label>
+
+									</span>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</p-panel>
+					<p-table [value]="fournisseurContactGrid" [resizableColumns]="true"  styleClass="p-datatable-gridlines p-datatable-sm mt-4" class="col-md-12">
+						<!-- Header -->
+						<ng-template pTemplate="header">
+						  <tr>
+							<th pResizableColumn></th>
+							<th pResizableColumn>Profession</th>
+							<th pResizableColumn>Contact </th>
+							<th pResizableColumn>Téléphone</th>
+							<th pResizableColumn>Fax</th>
+							<th pResizableColumn>Email</th>	
+							
+							
+						  </tr>
+						</ng-template>
+					  
+						<!-- Body -->
+						<ng-template pTemplate="body" let-fournisseur let-rowIndex="rowIndex">
+						  <tr>
+							<td style="width:2%">
+								{{ rowIndex + 1 }}
+							</td>
+							<td pEditableColumn>
+							  <p-cellEditor>
+								<ng-template pTemplate="input">
+								  <p-dropdown [options]="professions" [(ngModel)]="fournisseur.profession" [showClear]="true" placeholder="profession" appendTo="body"></p-dropdown>
+
+								</ng-template>
+								<ng-template pTemplate="output">
+								  {{ fournisseur.profession }}
+								</ng-template>
+							  </p-cellEditor>
+							</td>
+							<td pEditableColumn>
+								<p-cellEditor>
+								  <ng-template pTemplate="input">
+									<input type="text" [(ngModel)]="fournisseur.contact" class="input-dataGrid">
+								  </ng-template>
+								  <ng-template pTemplate="output">
+									{{ fournisseur.contact }}
+								  </ng-template>
+								</p-cellEditor>
+							  </td>
+							  <td pEditableColumn>
+								<p-cellEditor>
+								  <ng-template pTemplate="input">
+									<input type="text" [(ngModel)]="fournisseur.telephone" class="input-dataGrid">
+								  </ng-template>
+								  <ng-template pTemplate="output">
+									{{ fournisseur.telephone }}
+								  </ng-template>
+								</p-cellEditor>
+							  </td>
+							  <td pEditableColumn>
+								<p-cellEditor>
+								  <ng-template pTemplate="input">
+									<input type="text" [(ngModel)]="fournisseur.fax" class="input-dataGrid">
+								  </ng-template>
+								  <ng-template pTemplate="output">
+									{{ fournisseur.fax }}
+								  </ng-template>
+								</p-cellEditor>
+							  </td>	
+							  <td pEditableColumn>
+								<p-cellEditor>
+								  <ng-template pTemplate="input">
+									<input type="text" [(ngModel)]="fournisseur.email" (keydown.enter)="onEditComplete()" (keydown.Tab)="onEditComplete()" class="input-dataGrid">
+								  </ng-template>
+								  <ng-template pTemplate="output">
+									{{ fournisseur.email }}
+								  </ng-template>
+								</p-cellEditor>
+							  </td>							
+						  </tr>
+
+						</ng-template>
+					  </p-table>
+				</p-tabPanel>
+				<p-tabPanel header="Information financier" class="line-height-3 m-0">
+                    <div class="p-fluid p-formgrid grid">
+
+                        <div class="col-12 md:col-2">
+                            <div class="card p-fluid">
+
+                                <div class="field-checkbox">
+                                    <p-checkbox class="mr-2" name="group1" value=true [(ngModel)]="changement" id="changementRaisonSociale"></p-checkbox>
+                                    <label class="mr-2" for="changementRaisonSociale">Fodec</label>
+                                </div>
+                                <div class="field-checkbox">
+                                    <p-checkbox class="mr-2" name="group1" value=true [(ngModel)]="changement" id="changementRaisonSociale"></p-checkbox>
+                                    <label class="mr-2" for="changementRaisonSociale">Timbre</label>
+                                </div>
+                                <div class="field-checkbox">
+                                    <p-checkbox class="mr-2" name="group1" value=true [(ngModel)]="changement" id="changementRaisonSociale"></p-checkbox>
+                                    <label class="mr-2" for="changementRaisonSociale">Assujeti</label>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-5">
+                            <div class="card p-fluid">
+                                <div class="p-fluid formgrid grid">
+                                <div class="col-12 md:col-2">
+                                    <div class="field-radiobutton">
+                                        <p-radioButton name="tva" value="payeTva" [(ngModel)]="valRadio" id="paye" (click)="onRadioChange()"></p-radioButton>
+                                        <label for="paye">Payé Tva</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 md:col-4">
+                                    <div class="field-checkbox">
+                                        <p-checkbox class="mr-2" name="group1" value=true [(ngModel)]="changement" id="changementRaisonSociale"></p-checkbox>
+                                        <label class="mr-2" for="changementRaisonSociale">Matricule Fiscale</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 md:col-6">
+                                    <div class="p-float-label">
+                                        <span class="p-float-label  ">
+                                            <input pInputText id="matriculeFiscale" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                             <label For="matriculeFiscale">Matricule Fiscale/CIN</label>
+                                        </span>
+                                    </div>
+                                </div>
+
+                             </div>
+                             <div class="p-fluid formgrid grid field">
+                                <div class="col-12 md:col-3">
+                                    <div class="field-radiobutton">
+                                        <p-radioButton name="import" value="import" [(ngModel)]="valImport" id="city1" [disabled]="true"></p-radioButton>
+                                        <label for="import">Import</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 md:col-6">
+                                    <div class="p-float-label">
+                                        <span class="p-float-label ">
+                                            <input pInputText id="matriculeFiscale" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact" [disabled]="true">
+                                             <label For="matriculeFiscale">N° Import</label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-fluid formgrid grid field">
+                                <div class="col-12 md:col-3 ">
+                                    <div class="field-radiobutton">
+                                        <p-radioButton name="tva" value="exonore" [(ngModel)]="valRadio" id="ex" (click)="onRadioChange()"></p-radioButton>
+                                        <label for="ex">Exonoré</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 md:col-6 ">
+                                    <div class="p-float-label">
+                                        <span class="p-float-label ">
+                                            <input pInputText id="matriculeFiscale" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact" [disabled]="!isFieldsDisabled">
+                                             <label For="matriculeFiscale">N° Exonoration</label>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="p-fluid formgrid grid field">
+                                <div class="field col-12 md:col-6">
+                                    <span class="p-float-label">
+                                        <p-calendar inputId="calendar" [disabled]="!isFieldsDisabled"></p-calendar>
+                                        <label for="calendar">Date Debut</label>
+                                    </span>
+                                </div>
+                                <div class="field col-12 md:col-6">
+                                    <span class="p-float-label">
+                                        <p-calendar inputId="calendar" [disabled]="!isFieldsDisabled"></p-calendar>
+                                        <label for="calendar">Date Fin</label>
+                                    </span>
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-5">
+                            <div class="card p-fluid">
+                                <div class="p-fluid formgrid grid fieled">
+                                <div class="col-12 md:col-6">
+                                    <span class="p-float-label">
+                                        <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                        <label for="famille">Banque</label>
+
+                                    </span>
+                                </div>
+
+                                <div class="col-12 md:col-6">
+                                    <div class="p-float-label">
+                                        <span class="p-float-label  ">
+                                            <input pInputText id="rib" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                             <label For="rib">RIB</label>
+                                        </span>
+                                    </div>
+                                </div>
+                                </div>
+									<p-table [value]="fournisseurBanque" [resizableColumns]="true" styleClass="p-datatable-gridlines p-datatable-sm mt-4 mb-4" class="col-md-12 mb-2">
+									<!-- Header -->
+									<ng-template pTemplate="header">
+									  <tr>
+										<th pResizableColumn></th>
+										<th pResizableColumn>Banque</th>
+										<th pResizableColumn>RIB</th>
+									  </tr>
+									</ng-template>
+								  
+									<!-- Body -->
+									<ng-template pTemplate="body" let-frsBanque let-rowIndex="rowIndex">
+									  <tr>
+										<td style="width: 2%">{{ rowIndex + 1 }}</td>
+										<td pEditableColumn>
+										  <p-cellEditor>
+											<ng-template pTemplate="input">
+											  <p-dropdown [options]="Dropbanques" [(ngModel)]="frsBanque.codeBanque" [showClear]="true"
+												placeholder="Banque" appendTo="body" optionLabel="banque">
+												<ng-template pTemplate="item" let-banque>
+												  <span>{{ banque.name }}</span>
+												</ng-template>
+											  </p-dropdown>
+											</ng-template>
+											<ng-template pTemplate="output">
+											  {{ frsBanque?.codeBanque }}
+											</ng-template>
+										  </p-cellEditor>
+										</td>
+										<td pEditableColumn>
+										  <p-cellEditor>
+											<ng-template pTemplate="input">
+											  <input type="text" [(ngModel)]="frsBanque.RIB" (keydown.enter)="onEditCompleteBanque()"
+												(keydown.Tab)="onEditCompleteBanque()" class="input-dataGrid banque-input">
+											</ng-template>
+											<ng-template pTemplate="output">
+											  {{ frsBanque?.RIB }}
+											</ng-template>
+										  </p-cellEditor>
+										</td>
+									  </tr>
+									</ng-template>
+								  	</p-table>
+								  
+                                <div class="p-fluid formgrid grid field">
+                                    <div class="col-12 md:col-6">
+                                        <span class="p-float-label">
+                                            <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                            <label for="famille">R/S</label>
+
+                                        </span>
+                                    </div>
+
+                                    <div class="col-12 md:col-6">
+                                        <div class="p-float-label">
+                                            <span class="p-float-label  ">
+                                                <input pInputText id="rib" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-fluid p-formgrid grid">
+                       
+						<div class="col-12 md:col-2">
+                            <div class="card p-fluid">
+
+                                <div class="field-checkbox">
+                                    <p-checkbox class="mr-2" name="group1" value=true [(ngModel)]="changement" id="changementRaisonSociale"></p-checkbox>
+                                    <label class="mr-2" for="changementRaisonSociale">Article actif</label>
+                                </div>
+                                <div class="field-checkbox">
+                                    <p-checkbox class="mr-2" name="group1" value=true [(ngModel)]="changement" id="changementRaisonSociale"></p-checkbox>
+                                    <label class="mr-2" for="changementRaisonSociale">Inactif</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 md:col-5">
+                            <div class="card p-fluid">
+                                <div class="p-fluid formgrid grid ">
+                                    <div class="col-12 ">
+                                        <span class="p-float-label">
+                                            <p-autoComplete [(ngModel)]="InformationFournisseur.client2" [suggestions]="filteredclient2" (completeMethod)="filterclient2($event)" field="designationclient" [dropdown]="true"></p-autoComplete>
+                                            <label for="famille">Mode Réglement</label>
+
+                                        </span>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="p-fluid formgrid grid field"> <!-- Corrected the class name "fieled" to "field" -->
+
+                                    <label class="col-12 md:col-5">Echéance saisie après:</label>
+
+                                    <div class="col-12 md:col-2">
+                                        <input pInputText id="rib1" style="height: 25px;" type="number" [(ngModel)]="InformationFournisseur.contact">
+                                    </div>
+
+                                    <label class="col-12 md:col-3">Par</label>
+
+                                    <div class="col-12 md:col-2">
+                                        <input pInputText id="rib2" style="height: 25px;" type="number" [(ngModel)]="InformationFournisseur.contact">
+                                    </div>
+
+                                </div>
+                                <div class="p-fluid formgrid grid field">
+                                    <div class="col-12 md:col-6">
+                                        <div class="float-input">
+                                            <span class="p-float-label">
+                                                <input pInputText id="contact" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                                 <label For="contact">Ristoume</label>
+
+                                            </span>
+
+                                         </div>
+                                        </div>
+
+                                        <div class="col-12 md:col-4">
+                                            <div class="float-input">
+                                                <span class="p-float-label">
+                                                    <input pInputText id="contact" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                                     <label For="contact">Remise</label>
+                                                </span>
+                                             </div>
+                                            </div>
+                                </div>
+                                
+							</div>
+                        </div>
+						<div class="col-12 md:col-5 p-fluid p-formgrid grid">
+							<div class="col-12 md:col-6">
+								<div class="card p-fluid">
+
+									<p-divider >
+										<div class="inline-flex align-items-center">
+											<i class="pi pi-file mr-2"></i>
+											<b>Convention</b>
+										</div>
+									</p-divider>
+
+									<div class="p-fluid formgrid grid ">
+										
+                                            <div class="float-input">
+                                                <span class="p-float-label">
+                                                    <input pInputText id="contact" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                                     <label For="contact">Seuil Crédit</label>
+                                                </span>
+                                             </div>
+											 <br><br>
+											 <div class="float-input">
+                                                <span class="p-float-label">
+                                                    <input pInputText id="contact" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                                     <label For="contact">Seuil En Cours</label>
+                                                </span>
+                                             </div>
+                                       
+									</div>																							
+								</div>
+							</div>
+							<div class="col-12 md:col-6">
+								<div class="card p-fluid">
+
+									<p-divider >
+										<div class="inline-flex align-items-center">
+											<i class="pi pi-file mr-2"></i>
+											<b>Solde</b>
+										</div>
+									</p-divider>
+
+									<div class="p-fluid formgrid grid ">
+										
+                                            <div class="float-input">
+                                                <span class="p-float-label">
+                                                    <input pInputText id="contact" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                                     <label For="contact">Solde Crédit</label>
+                                                </span>
+                                             </div>
+											 <br><br>
+											 <div class="float-input">
+                                                <span class="p-float-label">
+                                                    <input pInputText id="contact" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+                                                     <label For="contact">Solde En Cours</label>
+                                                </span>
+                                             </div>
+                                       
+									</div>																							
+								</div>
+							</div>
+						</div>
+
+                     
+					</div>
+
+				</p-tabPanel>
+				<p-tabPanel header="Tarification" class="line-height-3 m-0">
+					<div class="p-fluid p-formgrid grid">
+						<div class="col-12 md:col-6">
+							<div class="scrollable-container ">
+
+								<p-table [value]="ventes" dataKey="id"  [resizableColumns]="true"
+								selectionMode="single">
+									<ng-template pTemplate="header">
+									<tr>
+										<th>Type Vente</th>
+										<th>Marge</th>
+									</tr>
+									</ng-template>
+
+									<ng-template pTemplate="body" let-vente let-rowIndex="rowIndex">
+										
+									<tr>
+										<td>{{ vente.type }}</td>
+										<td>
+										<input type="number" [value]="vente.marge" (keydown.Tab)="onTabPressed(rowIndex)" (blur)="onCellBlur()">
+										</td>
+									</tr>
+									
+									</ng-template>
+								
+								</p-table>
+							</div>
+						</div>
+						<div class="col-12 md:col-3">
+							<!-- Zone de saisie "Marge Sécurité" -->
+							<div class="p-fluid p-formgrid grid">
+								<div class="col-12 md:col-10">
+									<span class="p-float-label">										
+										<input pInputText id="rib" style="height: 25px;" type="number" [(ngModel)]="InformationFournisseur.contact">
+										<label htmlFor="observation">Marge Sécurité :</label>
+									</span>
+								</div>
+								<div class="col-12 md:col-2">
+									<button pButton pRipple  icon="pi pi-check" class="p-button btn-verif"></button>
+								</div>
+							</div>
+							<!-- Zone de saisie "Appro Qte Min X" -->
+							<div class="p-fluid p-formgrid grid mt-2">
+								<div class="col-12 md:col-10">
+									<span class="p-float-label">										
+										<input pInputText id="appro" style="height: 25px;" type="number" [(ngModel)]="InformationFournisseur.contact">
+										<label htmlFor="Appro Qte Min X">Appro Qte Min X :</label>
+									</span>
+								</div>
+								<div class="col-12 md:col-2">
+									<button pButton pRipple  icon="pi pi-check" class="p-button btn-verif" ></button>
+								</div>
+							</div>
+							<!-- Zone de saisie "Délai Livraison" -->
+							<div class="col-12 field">
+							  <span class="p-float-label">
+								<input pInputText id="Délai" style="height: 25px;" type="number" placeholder="Jours" [(ngModel)]="InformationFournisseur.contact">
+								<label htmlFor="observation">Délai Livraison :</label>
+							  </span>
+							</div>
+						  
+							
+						  </div>
+						  
+					</div>
+				</p-tabPanel>
+				  
+				  
+				<p-tabPanel header="Piéces relatives" class="line-height-3 m-0">
+					<div class="p-formgrid grid ">
+						<div class="col-12">
+							<br>
+							<!-- <p-divider >
+								<div class="inline-flex align-items-center mt-2">
+									<i class="pi pi-file mr-2"></i>
+									<b>Piéces relatives</b>
+								</div>
+							</p-divider> -->
+							<div class="scrollable-container ">							
+								<div class="scrollable-container">							
+									<p-fileUpload
+									  name="demo[]"
+									  url="./upload.php"
+									  (onUpload)="onUpload($event)"
+									  [multiple]="true"
+									  [maxFileSize]="1000000"
+									  scrollHeight="400px"
+									  class="my-file-upload"
+									>
+									  <ng-template pTemplate="content">
+										<ul *ngIf="uploadedFiles.length">
+										  <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+										</ul>
+									  </ng-template>
+									</p-fileUpload>
+								  </div>
+								  
+							</div>
+						</div>						
+					</div>					
+				</p-tabPanel>
+				<p-tabPanel header="Observations" class="line-height-3 m-0">
+					<div class="col-12">
+						<div class="card p-fluid">
+							<div class="col-12 field">
+								<span class="p-float-label">
+									<input pInputText id="rib" style="height: 25px;" type="text" [(ngModel)]="InformationFournisseur.contact">
+									<label htmlFor="observation">Nom Fournisseur :</label>
+								</span>
+							</div>
+							<div class="col-12 field">
+								<span class="p-float-label">
+									<textarea rows="4" cols="80"  pInputTextarea id="observation" type="text" [(ngModel)]="InformationFournisseur.adresse"></textarea>
+									<label htmlFor="observation">Observation</label>
+								</span>
+							</div>
+							
+						</div>
+					</div>
+
+
+				</p-tabPanel>
+				<p-tabPanel header="Listes des articles" class="line-height-3 m-0">
+					<p-table [value]="articlefournisseur" [resizableColumns]="true"  styleClass="p-datatable-gridlines p-datatable-sm mt-4" class="col-md-12">
+						<!-- Header -->
+						<ng-template pTemplate="header">
+						  <tr>
+							<th pResizableColumn></th>
+							<th pResizableColumn>Code Article</th>
+							<th pResizableColumn>Désignation </th>
+							<th pResizableColumn>Prix Achat HT</th>																				
+						  </tr>
+						</ng-template>
+					  
+						<!-- Body -->
+						<ng-template pTemplate="body" let-article let-rowIndex="rowIndex">
+						  <tr>
+							<td style="width:2%">
+								{{ rowIndex + 1 }}
+							</td>
+							<td pEditableColumn>
+								<p-cellEditor>
+								  <ng-template pTemplate="input">
+									<p-dropdown [options]="articles" [(ngModel)]="article.code" [showClear]="true" placeholder="Code Article" appendTo="body"></p-dropdown>
+								  </ng-template>
+								  <ng-template pTemplate="output">
+									{{ article.code }}
+								  </ng-template>
+								</p-cellEditor>
+							  </td>
+							  
+							<td>
+								<p-cellEditor>
+								  <ng-template pTemplate="input">
+									<input type="text" [(ngModel)]="article.designation" class="input-dataGrid">
+								  </ng-template>
+								  <ng-template pTemplate="output">
+									{{ getDesignationByCode(article.code.codeArticle) }}								  </ng-template>
+								</p-cellEditor>
+							</td>
+							<td pEditableColumn>
+								<p-cellEditor>
+								  <ng-template pTemplate="input">
+									<input type="number" [(ngModel)]="article.prixAHT" class="input-dataGrid" (keydown.enter)="onEditCompleteArticle()" (keydown.Tab)="onEditCompleteArticle()">
+								  </ng-template>
+								  <ng-template pTemplate="output">
+									{{ article.prixAHT }}
+								  </ng-template>
+								</p-cellEditor>
+							</td>							  						
+						  </tr>
+
+						</ng-template>
+					  </p-table>
+				</p-tabPanel>								  
+				<p-tabPanel header="Listes Sous Familles articles" class="line-height-3 m-0">
+					<!-- <div class="card flex justify-content-center">
+						<p-multiSelect [options]="sousFamilles" [(ngModel)]="SelectedsousFamilles" defaultLabel="sousFamilles" [optionLabel]="getSousFamilleLabel(sousFamilles.getInstance)" display="chip"></p-multiSelect>
+					</div> -->
+
+					<div class="card flex justify-content-center">
+						<p-multiSelect [options]="sousFamilles" [(ngModel)]="SelectedsousFamilles" defaultLabel="sousFamilles" optionLabel="code" >
+							<ng-template let-value pTemplate="selectedItems">
+								<div class="flex align-items-center gap-2" *ngFor="let option of SelectedsousFamilles">
+									<div>{{ option.code }}</div>
+									<div>{{ option.libelle }}</div>
+								</div>
+								<div *ngIf="!SelectedsousFamilles || SelectedsousFamilles.length === 0">Select Sous Familles</div>
+							</ng-template>
+							<ng-template let-article pTemplate="item">
+								<div class="flex align-items-center gap-2">
+									<div>{{ article.code }}</div>
+									<div>{{ article.libelle }}</div>									
+								</div>
+							</ng-template>
+						</p-multiSelect>
+					</div>
+				</p-tabPanel>
+			</p-tabView>
+			<ng-template pTemplate="footer">
+				<button pButton pRipple  icon="pi pi-times" type="button" label="Annuler" class="p-button-raised p-button-danger"></button>
+
+                <button pButton pRipple type="button" icon="pi pi-check" label="Enregistrer" class="p-button-raised p-button-success enregistrer"></button>
+
+            </ng-template>
+        </p-dialog>
+
+	</div>
+
+</div>

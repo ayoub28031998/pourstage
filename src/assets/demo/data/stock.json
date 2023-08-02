@@ -1,0 +1,26 @@
+{
+    "data":[
+    {
+      "CodeDepot": "DP01",
+      "CodeArticle": "AR01",
+      "Quantite": 100,
+      "QuantiteMin": 10,
+      "QuantiteMax": 200,
+      "CodeEmplacement1": "EM01",
+      "CodeEmplacement2": "EM02",
+      "DateDerniereModification": "2022-06-15T10:30:00Z",
+      "DerniereModificationPar": "Utilisateur1"
+    },
+    {
+      "CodeDepot": "DP02",
+      "CodeArticle": "AR02",
+      "Quantite": 50,
+      "QuantiteMin": 5,
+      "QuantiteMax": 100,
+      "CodeEmplacement1": "EM03",
+      "CodeEmplacement2": "EM04",
+      "DateDerniereModification": "2022-07-20T14:45:00Z",
+      "DerniereModificationPar": "Utilisateur2"
+    }
+  ]
+}

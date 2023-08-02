@@ -1,0 +1,24 @@
+{
+    "data":[
+        {
+          "codeLangue": "FR",
+          "designationLangue": "French"
+        },
+        {
+          "codeLangue": "EN",
+          "designationLangue": "English"
+        },
+        {
+          "codeLangue": "DE",
+          "designationLangue": "German"
+        },
+        {
+          "codeLangue": "JP",
+          "designationLangue": "Japanese"
+        },
+        {
+          "codeLangue": "ES",
+          "designationLangue": "Spanish"
+        }
+      ]
+}

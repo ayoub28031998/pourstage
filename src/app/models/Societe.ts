@@ -1,0 +1,32 @@
+export class Societe {
+    codeSociete!: string;
+    raisonSociale!: string;
+    codeSecteurActivite!: string;
+    capitalSocial!: number;
+    nomGerant!: string;
+    dateOuverture!: Date;
+    matriculeFiscale!: string;
+    registreCommerce!: string;
+    numeroDouane!: string;
+    matriculeEmployeur!: string;
+    cleEmployeur!: string;
+    codeExploitation!: string;
+    matriculeCnss!: string;
+    codeBanque!: string;
+    ribBanquaire!: string;
+    adresse1!: string;
+    adresse2!: string;
+    pays!: string;
+    ville!: string;
+    codePostal!: string;
+    tel1!: string;
+    tel2!: string;
+    tel3!: string;
+    tel4!: string;
+    fax!: string;
+    mail1!: string;
+    mail2!: string;
+    mail3!: string;
+    siteWeb!: string;
+    observation!: string;
+}

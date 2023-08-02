@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "codeSecteurActivite": "SA001",
+      "libelleSecteurActivite": "Secteur d'activité 1",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur1"
+    },
+    {
+      "codeSecteurActivite": "SA002",
+      "libelleSecteurActivite": "Secteur d'activité 2",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur2"
+    },
+    {
+      "codeSecteurActivite": "SA003",
+      "libelleSecteurActivite": "Secteur d'activité 3",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur3"
+    },
+    {
+      "codeSecteurActivite": "SA004",
+      "libelleSecteurActivite": "Secteur d'activité 4",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur4"
+    },
+    {
+      "codeSecteurActivite": "SA005",
+      "libelleSecteurActivite": "Secteur d'activité 5",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur5"
+    },
+    {
+      "codeSecteurActivite": "SA006",
+      "libelleSecteurActivite": "Secteur d'activité 6",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur6"
+    },
+    {
+      "codeSecteurActivite": "SA007",
+      "libelleSecteurActivite": "Secteur d'activité 7",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur7"
+    },
+    {
+      "codeSecteurActivite": "SA008",
+      "libelleSecteurActivite": "Secteur d'activité 8",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur8"
+    },
+    {
+      "codeSecteurActivite": "SA009",
+      "libelleSecteurActivite": "Secteur d'activité 9",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur9"
+    },
+    {
+      "codeSecteurActivite": "SA010",
+      "libelleSecteurActivite": "Secteur d'activité 10",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur10"
+    },
+    {
+      "codeSecteurActivite": "SA011",
+      "libelleSecteurActivite": "Secteur d'activité 11",
+      "dateCreation": "2023-07-03T00:00:00Z",
+      "creerPar": "Utilisateur11"
+    }
+  ]
+}

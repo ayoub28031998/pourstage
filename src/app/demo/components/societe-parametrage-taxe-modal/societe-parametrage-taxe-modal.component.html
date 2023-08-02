@@ -1,0 +1,28 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Modal Title</h5>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="codeSociete">codeSociete</label>
+          <input type="text" class="form-control" id="codeSociete" [(ngModel)]="
+          codeSociete" name="codeSociete" />
+        </div>
+        <div class="form-group">
+          <label for="fodec">fodec</label>
+          <input type="text" class="form-control" id="fodec" [(ngModel)]="fodec" name="fodec" />
+        </div>
+        <div class="form-group">
+          <label for="creerPar">derniereModificationPar</label>
+          <input type="text" class="form-control" id="derniereModificationPar" [(ngModel)]="derniereModificationPar" name="derniereModificationPar" />
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success" (click)="confirm()">Valider</button>
+      <button class="btn btn-danger" (click)="cancel()">Annuler</button>
+    </div>
+  </div>
+  

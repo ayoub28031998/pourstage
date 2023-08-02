@@ -1,0 +1,25 @@
+{
+    "data":
+    [
+        {
+          "code": "PAR",
+          "ville": "Paris"
+        },
+        {
+          "code": "NYC",
+          "ville": "New York City"
+        },
+        {
+          "code": "BER",
+          "ville": "Berlin"
+        },
+        {
+          "code": "TOK",
+          "ville": "Tokyo"
+        },
+        {
+          "code": "LON",
+          "ville": "London"
+        }
+      ]
+}

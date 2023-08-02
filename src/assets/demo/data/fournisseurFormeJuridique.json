@@ -1,0 +1,23 @@
+{
+    "data":[{
+      "codeFormeJuridique": "FORME001",
+      "libelle": "Forme Juridique A"
+    },
+    {
+      "codeFormeJuridique": "FORME002",
+      "libelle": "Forme Juridique B"
+    },
+    {
+      "codeFormeJuridique": "FORME003",
+      "libelle": "Forme Juridique C"
+    },
+    {
+      "codeFormeJuridique": "FORME004",
+      "libelle": "Forme Juridique D"
+    },
+    {
+      "codeFormeJuridique": "FORME005",
+      "libelle": "Forme Juridique E"
+    }
+    ]
+}

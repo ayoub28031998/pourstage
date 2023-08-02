@@ -1,0 +1,33 @@
+{"data":[
+    {
+      "code": "FR",
+      "referenceTel": "+33",
+      "devise": "EUR",
+      "pays": "France"
+    },
+    {
+      "code": "US",
+      "referenceTel": "+1",
+      "devise": "USD",
+      "pays": "United States"
+    },
+    {
+      "code": "DE",
+      "referenceTel": "+49",
+      "devise": "EUR",
+      "pays": "Germany"
+    },
+    {
+      "code": "JP",
+      "referenceTel": "+81",
+      "devise": "JPY",
+      "pays": "Japan"
+    },
+    {
+      "code": "GB",
+      "referenceTel": "+44",
+      "devise": "GBP",
+      "pays": "United Kingdom"
+    }
+  ]
+}
